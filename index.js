@@ -9,6 +9,7 @@ const translate = require('translate-google');
 // pdf creation libraries
 const path = require('path');
 const PDFDocument = require('pdfkit');
+const fs = require("fs");
 
 
 
@@ -16,28 +17,44 @@ const PDFDocument = require('pdfkit');
 
 const app = express();
 app.set('view engine', 'ejs');
-app.use(express.urlencoded({ extended: true }));
-const doc = new PDFDocument();
 
-app.route("/")
-    .get(function (res, req) {
-        var filePath = path.join(__dirname, 'telugu doc.pdf');
-        textExtract(filePath, { encoding: "UTF8" }, function (err, pages) {
-            if (err) {
-                console.log(err)
-            } else {
-                pages.forEach(page => {
-                   translate(page, { to: 'en'}).then(res => {
-                    console.log(res)
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static("public"));
+
+
+
+
+app.get("/", function (req, res) {
+    res.render("home");
+});
+
+app.post("/inputLang", function (req, res) {
+    let input = req.body.fromLanguage
+    let translateTo = req.body.toLanguage
+    console.log(input);
+    let fileName = req.body.userfile
+    var filePath = path.join(__dirname, fileName);
+    textExtract(filePath, { encoding: "UTF8" }, function (err, pages) {
+        if (err) {
+            console.log(err)
+        } else {
+            pages.forEach(page => {
+                translate(page, { from: input, to: translateTo }).then(transText => {
+                    const doc = new PDFDocument();
+                    doc.pipe(fs.createWriteStream("translated.pdf" +fileName));
+                    doc
+                        .fontSize(15)
+                        .text(transText)
+                    doc.end();
                 }).catch(err => {
                     console.error(err)
-                }) 
-                });
-            }
-        });
-
-    })
-
+                })
+                console.log(pages);
+            });
+        }
+    });
+    res.redirect("/");
+});
 app.listen(3000, function () {
     console.log("server starts at 3000 successfully!!");
 })

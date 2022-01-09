@@ -1,0 +1,145 @@
+<%- include("partials/header"); -%>
+    <header>
+        <h1>DocFluent</h1>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Document Translation </a>
+        <a href="#">About us</a>
+    </nav>
+
+
+    <main>
+
+        <section>
+            <img src="images/2dd2a225-d678-42c6-ac45-38216e7f372f.jpg" alt="" width="30%" class="center">
+            <img src="images/language barrrier.jpeg" alt="" width="90%" class="centre">
+
+        </section>
+        <section>
+            <h3><em>Document Translation</em></h3>
+            <p>
+                DocFluent allows you to translate different file formats like Word, Pdfs, Markdown, to the language of
+                your choice for free of cost!
+                There are as many as *32* language pairs that you can translate your Document into.
+            </p>
+
+
+        </section>
+        <section>
+            <form action="inputLang" method="post">
+                <div>
+                    <select id="inputLang" name="fromLanguage" style="font-size:20px" class="dropdown"
+                        CssClass="select2">
+                        <option value="en">English</option>
+                        <option value="gu-IN">Gujarati(India)</option>
+                        <option value="hi">Hindi</option>
+                        <option value="ta">Tamil</option>
+                        <option value="pa">Punjabi</option>
+                        <option value="mr">Marathi</option>
+                        <option value="sa">Sanskrit</option>
+                        <option value="kn">Kannada</option>
+                        <option value="kok">Konkani</option>
+                        <option value="ms">Malay</option>
+                        <option value="it">Italian</option>
+                        <option value="te">Telugu</option>
+                        <option value="ja">Japanese</option>
+                        <option value="ur">Urdu</option>
+                        <option value="ru">Russian</option>
+                        <option value="zh">Chinese</option>
+                        <option value="ar">Arabic</option>
+                        <option value="uk">Ukrainian</option>
+                        <option value="vi">Vietnamese</option>
+                        <option value="id">Indonesian</option>
+                        <option value="fr">French</option>
+                        <option value="zu">Zulu</option>
+                        <option value="tr">Turkish</option>
+                        <option value="th">Thai</option>
+                        <option value="sl">Slovenian</option>
+
+                    </select>
+                </div>
+                <div>
+                    <select id="outputLang" name="toLanguage" style="font-size:20px" class="dropdown"
+                        CssClass="select2">
+                        <option value="en">English</option>
+                        <option value="gu-IN">Gujarati(India)</option>
+                        <option value="hi">Hindi</option>
+                        <option value="ta">Tamil</option>
+                        <option value="pa">Punjabi</option>
+                        <option value="mr">Marathi</option>
+                        <option value="sa">Sanskrit</option>
+                        <option value="kn">Kannada</option>
+                        <option value="kok">Konkani</option>
+                        <option value="ms">Malay</option>
+                        <option value="it">Italian</option>
+                        <option value="te">Telugu</option>
+                        <option value="ja">Japanese</option>
+                        <option value="ur">Urdu</option>
+                        <option value="ru">Russian</option>
+                        <option value="zh">Chinese</option>
+                        <option value="ar">Arabic</option>
+                        <option value="uk">Ukrainian</option>
+                        <option value="vi">Vietnamese</option>
+                        <option value="id">Indonesian</option>
+                        <option value="fr">French</option>
+                        <option value="zu">Zulu</option>
+                        <option value="tr">Turkish</option>
+                        <option value="th">Thai</option>
+                        <option value="sl">Slovenian</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="file">Choose file to upload</label>
+                    <input name="userfile" type="file"
+                        accept=".DOC,.DOCX,.DOCM,.XLS,.XLSX,.XLSM,.PPT,.PPTX,.PPTM,.TXT,.DOCUMENT,.PDF,.MD" />
+                </div>
+                <input type="submit" value="Translate" />
+            </form>
+        </section>
+        <div class="terms-area" style="margin-bottom:20px">
+            <span>*By uploading your files or using our service you agree with our </span>
+            <a href="#" rel="nofollow noreferrer">Terms of
+                Service</a>
+            <span> and </span>
+            <a href="#" rel="nofollow noreferrer">Privacy
+                Policy</a>
+        </div>
+        </div>
+        <div class="ocrAppRowSmallest">
+            <div id="translationLoader" class="spinner-border text-success" role="status" style="display:none;">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        </div>
+
+
+        <div id="alertPlaceHolder" class="col-md-12">
+            <br />
+            <p id="alertMessage" class="alert alert-danger d-none"></p>
+            <p id="alertSuccess" class="alert alert-success d-none"></p>
+        </div>
+
+
+        <h2>How to translate Document</h2>
+        <img src="images/contract-icon-agreement_149152-376.jpg" alt="" width="5%" class="center">
+        <h3>Upload the File</h3>
+        <p>Drag and drop your file or browse on your device to upload it.</p>
+        <img src="images/language.png" alt="" width="5%" , class="center">
+        <h3>Select the Language</h3>
+        <p>Select the language of document and the language to which you wish to translate the document into.</p>
+        <img src="images/wait.png" alt="" width="5%" , class="center">
+        <h3>Click Translate and Wait</h3>
+        <p>Wait till your file gets translated</p>
+        <img src="images/result.png" alt="" width="5%" , class="center">
+        <h3>Download</h3>
+        <p>Download Results in the same format as the uploaded file.</p>
+        <section>
+            <p> Around 121 languages are spoken in India alone! With such a diversity, the Langauge becomes a barrier in
+                mode of communication rather being a medium for conversation. Machine Translation has become the most
+                vital tool and we have used it to overcome all language barriers to ensured efficient and effcective
+                treanslation of your documnet files. </p>
+        </section>
+    </main>
+    <%- include('partials/footer'); -%>
