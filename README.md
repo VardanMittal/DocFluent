@@ -25,6 +25,6 @@ Language barriers prevent free flow of information. It can cause simple tasks in
 * npm
 * HTML
 * CSS
-*
+
 # Website Link
 https://docfluent.herokuapp.com/
