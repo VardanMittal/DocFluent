@@ -17,8 +17,14 @@ Language barriers prevent free flow of information. It can cause simple tasks in
 * Users do not need any sign ups befero downloading or uploading file.
 * All the instructions are given in the website itself to make effective translation.
 
-# Libraries Used
 
 # Tech Stacks
 * Node.js
-* 
+* Express.js
+* ejs
+* npm
+* HTML
+* CSS
+*
+# Website Link
+https://docfluent.herokuapp.com/
