@@ -8,3 +8,17 @@ Language barriers prevent free flow of information. It can cause simple tasks in
 * @TanyaSri-23
 
 
+# Feautures
+* Tanslate any form of textual data in file format.
+* Allows the user to download the translated file.
+* The user can translate their documents in 24 language pairs.
+* Easy to use as it only requires user to browse files from their device and upload.
+* The translation is 100% free.
+* Users do not need any sign ups befero downloading or uploading file.
+* All the instructions are given in the website itself to make effective translation.
+
+# Libraries Used
+
+# Tech Stacks
+* Node.js
+* 
